@@ -6,15 +6,16 @@ const Navbar = () => {
   return (
     <motion.section
       initial={{
-      y:-100
+        y: -100,
       }}
       animate={{
         y: 0,
       }}
       transition={{
         duration: 1,
-            
-    }}  className="flex justify-between items-center">
+      }}
+      className="flex justify-between items-center p-6 md:py-8 md:px-16"
+    >
       <div>
         <img
           src="https://cdn.prod.website-files.com/63fd93c920392238faa118c4/63fec9eeb8692c4a95dd4ec0_logo.svg"

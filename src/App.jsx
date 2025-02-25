@@ -42,9 +42,9 @@ const App = () => {
 
   return (
     <div>
+      <Navbar />
+      
       <main className="p-6 md:py-8 md:px-16">
-        <Navbar />
-
         <section className="mt-10 flex flex-col gap-3">
           <div className="overflow-hidden">
             <motion.img
@@ -429,7 +429,7 @@ const App = () => {
         </section>
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };
