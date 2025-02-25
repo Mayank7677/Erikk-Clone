@@ -1,7 +1,7 @@
 import { motion, useSpring } from "motion/react";
 import React from "react";
 import { RiMenu4Fill } from "react-icons/ri";
-
+import { FaBehance } from "react-icons/fa";
 const Navbar = () => {
   return (
     <motion.section

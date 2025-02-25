@@ -3,13 +3,15 @@ import Navbar from "./components/Navbar";
 import { BsArrowDownRightCircleFill } from "react-icons/bs";
 import { motion, useInView } from "motion/react";
 import data from "./data/data";
-import { FaBehance, FaInstagram } from "react-icons/fa";
+
 import { FiTwitter } from "react-icons/fi";
 import { CiLinkedin, CiTwitter } from "react-icons/ci";
 import data2 from "./data/data2";
 import { div } from "motion/react-client";
-import { MdArrowOutward } from "react-icons/md";
+
 import LocomotiveScroll from "locomotive-scroll";
+import Footer from "./components/Footer";
+import { FaInstagram } from "react-icons/fa";
 
 const App = () => {
 
@@ -31,8 +33,7 @@ const App = () => {
   const ref5 = useRef(null);
   const isInView5 = useInView(ref5, { triggerOnce: true, threshold: 0.5 });
 
-  const ref6 = useRef(null);
-  const isInView6 = useInView(ref6, { triggerOnce: true, threshold: 0.5 });
+  
 
   const ref7 = useRef(null);
   const isInView7 = useInView(ref7, { triggerOnce: true, threshold: 0.5 });
@@ -428,127 +429,7 @@ const App = () => {
         </section>
       </main>
 
-      <footer className="bg-black text-white w-full p-6 md:py-8 md:px-16">
-        <div className="pt-10 text-center justify-center items-center flex flex-col gap-7 lg:gap-10 border-b pb-30">
-          <motion.h1
-            ref={ref6}
-            initial={{ opacity: 0, y: -200 }}
-            animate={isInView6 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="uppercase text-5xl font-light sm:text-7xl md:text-8xl lg:text-[9rem]"
-          >
-            let's create
-          </motion.h1>
-          <p className="uppercase text-4xl font-light md:text-6xl lg:text-7xl">
-            Unleashing the Potential of Your Brand
-          </p>
-          <button className="bg-white text-black w-fit flex items-center gap-3 font-mono cursor-pointer overflow-hidden  px-5 py-2 rounded-2xl">
-            <p className="uppercase">get in touch</p>
-            <MdArrowOutward />
-          </button>
-        </div>
-
-        <div className="mt-15 grid gap-10 sm:grid-cols-2 sm:gap-y-20 lg:grid-cols-4 ">
-          <div className="flex flex-col gap-10 cursor-pointer">
-            <img
-              className="text-white w-17"
-              src="https://cdn.prod.website-files.com/63fd93c920392238faa118c4/63fec9ef49df0ba686eda62b_logo-inverse.svg"
-              alt=""
-            />
-
-            <div className="flex flex-col gap-5 mt-auto">
-              <div className="flex gap-4 items-center cursor-pointer">
-                <FaInstagram className="text-4xl bg-white text-black rounded-full p-2" />
-                <p className="uppercase">instagram</p>
-              </div>
-
-              <div className="flex gap-4 items-center cursor-pointer">
-                <CiTwitter className="text-4xl bg-white text-black rounded-full p-2" />
-                <p className="uppercase">twitter</p>
-              </div>
-
-              <div className="flex gap-4 items-center cursor-pointer">
-                <FaBehance className="text-4xl bg-white text-black rounded-full p-2" />
-                <p className="uppercase">behance</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-7">
-            <h1 className="uppercase text-xl font-mono">pages</h1>
-
-            <ul className="flex flex-col gap-3  ">
-              {["home", "services", "about", "jobs", "contact"].map(
-                (ele, i) => {
-                  return (
-                    <li index={i} className="relative group max-w-fit">
-                      <p className="uppercase font-mono cursor-pointer">
-                        {ele}
-                      </p>
-                      <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
-                    </li>
-                  );
-                }
-              )}
-            </ul>
-
-            <button className="bg-white text-black w-fit flex items-center gap-3 font-mono cursor-pointer overflow-hidden  px-5 py-2 rounded-2xl">
-              <p className="uppercase">more templates</p>
-              <MdArrowOutward />
-            </button>
-          </div>
-
-          <div className="flex flex-col gap-7">
-            <h1 className="uppercase text-xl font-mono">sms</h1>
-
-            <ul className="flex flex-col gap-3">
-              {[
-                "work",
-                "work single",
-                "news",
-                "news single",
-                "shop",
-                "shop songle",
-              ].map((ele, i) => {
-                return (
-                  <li index={i} className="relative group max-w-fit">
-                    <p className="uppercase font-mono cursor-pointer">{ele}</p>
-                    <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-7">
-            <h1 className="uppercase text-xl font-mono">utility pages</h1>
-
-            <ul className="flex flex-col gap-3">
-              {[
-                "404 error page",
-                "password protected",
-                "styleguide",
-                "licensing",
-                "changelog",
-              ].map((ele, i) => {
-                return (
-                  <li index={i} className="relative group max-w-fit">
-                    <p className="uppercase font-mono cursor-pointer">{ele}</p>
-                    <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-25 relative group max-w-fit">
-          <p className="font-mono  uppercase tracking-tighter cursor-pointer">
-            mayank sapna panwar
-            <span className="absolute left-0 bottom-0 bg-white w-0 h-[2px] transition-all duration-200 group-hover:w-full"></span>
-          </p>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };
