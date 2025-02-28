@@ -7,17 +7,20 @@ import { MdArrowOutward } from "react-icons/md";
 const Footer = () => {
 
     const ref6 = useRef(null);
-    const isInView6 = useInView(ref6, { triggerOnce: true, threshold: 0.5 });
+  const isInView6 = useInView(ref6, { triggerOnce: true, threshold: 0.1 });
+  
+  const ref7 = useRef(null);
+  const isInView7 = useInView(ref7 , { triggerOnce: true, threshold:0.5 })
     
   return (
-    <footer className="bg-black text-white w-full p-6 md:py-8 md:px-16">
-      <div className="pt-10 text-center justify-center items-center flex flex-col gap-7 lg:gap-10 border-b pb-30">
+    <footer className="bg-black text-white w-full p-6 md:py-8 md:px-16 flex flex-col gap-20">
+      <div className="pt-10 text-center justify-center items-center flex flex-col gap-7 lg:gap-10 ">
         <motion.h1
           ref={ref6}
           initial={{ opacity: 0, y: -200 }}
           animate={isInView6 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="uppercase text-5xl font-light sm:text-7xl md:text-8xl lg:text-[9rem]"
+          className="uppercase text-5xl font-light tracking-tighter sm:text-8xl md:text-9xl xl:text-[16rem]"
         >
           let's create
         </motion.h1>
@@ -29,6 +32,14 @@ const Footer = () => {
           <MdArrowOutward />
         </button>
       </div>
+
+      <motion.div
+        ref={ref7}
+        initial={{ width: 0, }}
+        animate={isInView7 ? { width: "100%", } : {}}
+        transition={{ duration: 0.8 }}
+        className="h-[0.1px] w-full bg-gray-300"
+      ></motion.div>
 
       <div className="mt-15 grid gap-10 sm:grid-cols-2 sm:gap-y-20 lg:grid-cols-4 ">
         <div className="flex flex-col gap-10 cursor-pointer">
@@ -62,7 +73,7 @@ const Footer = () => {
           <ul className="flex flex-col gap-3  ">
             {["home", "services", "about", "jobs", "contact"].map((ele, i) => {
               return (
-                <li index={i} className="relative group max-w-fit">
+                <li key={i} className="relative group max-w-fit">
                   <p className="uppercase font-mono cursor-pointer">{ele}</p>
                   <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
                 </li>
@@ -89,7 +100,7 @@ const Footer = () => {
               "shop songle",
             ].map((ele, i) => {
               return (
-                <li index={i} className="relative group max-w-fit">
+                <li key={i} className="relative group max-w-fit">
                   <p className="uppercase font-mono cursor-pointer">{ele}</p>
                   <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
                 </li>
@@ -110,7 +121,7 @@ const Footer = () => {
               "changelog",
             ].map((ele, i) => {
               return (
-                <li index={i} className="relative group max-w-fit">
+                <li key={i} className="relative group max-w-fit">
                   <p className="uppercase font-mono cursor-pointer">{ele}</p>
                   <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
                 </li>

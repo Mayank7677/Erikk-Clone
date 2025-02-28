@@ -14,7 +14,7 @@ const Navbar = () => {
       transition={{
         duration: 1,
       }}
-      className="flex justify-between items-center p-6 md:py-8 md:px-16"
+      className="flex justify-between items-center px-6 py-4 md:py-8 md:px-16"
     >
       <div>
         <img
@@ -27,7 +27,7 @@ const Navbar = () => {
         <ul className="flex gap-10 max-md:hidden">
           {["work", "services", "about", "news", "pages"].map((ele, i) => {
             return (
-              <li index={i} className="relative group">
+              <li key={i} className="relative group">
                 <p className="font-mono cursor-pointer uppercase">{ele}</p>
                 <span className="absolute w-0 h-[1px] transition-all bg-black duration-200 group-hover:w-full"></span>
               </li>
