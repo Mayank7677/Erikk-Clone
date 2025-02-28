@@ -1,8 +1,23 @@
 import { motion, useSpring } from "motion/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RiMenu4Fill } from "react-icons/ri";
 import { FaBehance } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  let navigate = useNavigate();
+  const [click, setClick] = useState("");
+
+  let navigatePages = () => {
+    if (click === "work") navigate("/work");
+    else if (click === "news") navigate("/news");
+  };
+
+  useEffect(() => {
+    if (click) {
+      navigate(`/${click}`);
+    }
+  }, [click, navigate]);
+
   return (
     <motion.section
       initial={{
@@ -16,7 +31,7 @@ const Navbar = () => {
       }}
       className="flex justify-between items-center px-6 py-4 md:py-8 md:px-16"
     >
-      <div>
+      <div className="cursor-pointer" onClick={() => navigate("/")}>
         <img
           src="https://cdn.prod.website-files.com/63fd93c920392238faa118c4/63fec9eeb8692c4a95dd4ec0_logo.svg"
           alt=""
@@ -27,7 +42,11 @@ const Navbar = () => {
         <ul className="flex gap-10 max-md:hidden">
           {["work", "services", "about", "news", "pages"].map((ele, i) => {
             return (
-              <li key={i} className="relative group">
+              <li
+                onClick={(e) => setClick(ele)}
+                key={i}
+                className="relative group"
+              >
                 <p className="font-mono cursor-pointer uppercase">{ele}</p>
                 <span className="absolute w-0 h-[1px] transition-all bg-black duration-200 group-hover:w-full"></span>
               </li>

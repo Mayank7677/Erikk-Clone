@@ -7,7 +7,7 @@ import { MdArrowOutward } from "react-icons/md";
 const Footer = () => {
 
     const ref6 = useRef(null);
-  const isInView6 = useInView(ref6, { triggerOnce: true, threshold: 0.1 });
+  const isInView6 = useInView(ref6, { triggerOnce: true, threshold: 0.5 });
   
   const ref7 = useRef(null);
   const isInView7 = useInView(ref7 , { triggerOnce: true, threshold:0.5 })
@@ -131,7 +131,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-25 relative group max-w-fit">
+      <div className="relative group max-w-fit">
         <p className="font-mono  uppercase tracking-tighter cursor-pointer">
           mayank sapna panwar
           <span className="absolute left-0 bottom-0 bg-white w-0 h-[2px] transition-all duration-200 group-hover:w-full"></span>
