@@ -7,9 +7,9 @@ import About from '../components/About'
 const AboutPage = () => {
   return (
       <>
-          <Navbar />
+          {/* <Navbar /> */}
           <About/>
-          <Footer/>
+          {/* <Footer/> */}
       </>
   )
 }

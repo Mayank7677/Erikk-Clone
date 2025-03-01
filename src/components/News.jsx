@@ -26,7 +26,7 @@ const News = () => {
             (dets, i) => (
               <button
                 key={i}
-                className="px-4 py-2 opacity-80 border rounded-3xl uppercase font-mono tracking-wider"
+                className="px-4 py-2 opacity-80 border cursor-pointer rounded-3xl uppercase font-mono tracking-wider"
               >
                 {dets}
               </button>
@@ -39,12 +39,20 @@ const News = () => {
         {data4.map((dets, i) => (
           <div key={i} className="flex flex-col  gap-4">
             <div>
-              <img src={dets.image} alt="" />
+              <img
+                className="cursor-pointer hover:opacity-80 duration-500"
+                src={dets.image}
+                alt=""
+              />
             </div>
 
             <div className="flex flex-col gap-4">
-              <h1 className="text-2xl md:text-3xl opacity-80 font-mono tracking-tight   uppercase">{dets.title}</h1>
-              <p className="font-mono lg:text-lg tracking-tight opacity-60">{dets.description}</p>
+              <h1 className="text-2xl md:text-3xl opacity-80 font-mono tracking-tight   uppercase">
+                {dets.title}
+              </h1>
+              <p className="font-mono lg:text-lg tracking-tight opacity-60">
+                {dets.description}
+              </p>
             </div>
 
             <div className="flex gap-5 mt-4 items-center cursor-pointer">

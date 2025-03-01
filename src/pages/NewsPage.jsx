@@ -6,9 +6,9 @@ import Footer from '../components/Footer'
 const NewsPage = () => {
   return (
       <>
-          <Navbar />
+          {/* <Navbar />  */}
           <News />
-          <Footer/>
+          {/* <Footer/> */}
       </>
   )
 }

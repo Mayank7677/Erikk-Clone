@@ -6,9 +6,9 @@ import Services from '../components/Services'
 const ServicesPage = () => {
   return (
       <>
-          <Navbar />
+          {/* <Navbar /> */}
           <Services/>
-          <Footer/>
+          {/* <Footer/> */}
       </>
   )
 }

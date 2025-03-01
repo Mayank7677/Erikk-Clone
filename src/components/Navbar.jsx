@@ -16,7 +16,7 @@ const Navbar = () => {
     if (click) {
       navigate(`/${click}`);
     }
-  }, [click, navigate]);
+  }, [click]);
 
   return (
     <motion.section
@@ -39,7 +39,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex gap-10 items-center">
-        <ul className="flex gap-10 max-md:hidden">
+        <ul className="flex gap-10 max-sm:hidden max-lg:gap-4">
           {["work", "services", "about", "news", "pages"].map((ele, i) => {
             return (
               <li
@@ -111,7 +111,7 @@ const Navbar = () => {
           <motion.span className="text-white">LET'S CREATE</motion.span>
         </motion.button>
 
-        <RiMenu4Fill className="text-2xl md:hidden" />
+        <RiMenu4Fill className="text-2xl sm:hidden" />
       </div>
     </motion.section>
   );

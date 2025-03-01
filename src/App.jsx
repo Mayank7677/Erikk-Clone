@@ -8,6 +8,7 @@ import WorkPage from "./pages/WorkPage";
 import NewsPage from "./pages/NewsPage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
+import LocomotiveScroll from "locomotive-scroll";
 
 
 const App = () => {
@@ -15,11 +16,9 @@ const App = () => {
   // const scroll = new LocomotiveScroll();
 
 
-
-  
-
   return (
     <BrowserRouter>
+      <Navbar/>
       <Routes>
         <Route path="/" element={ <HomePage/> } />
         <Route path="/work" element={ <WorkPage/> } />
@@ -27,6 +26,7 @@ const App = () => {
         <Route path="/about" element={ <AboutPage/> } />
         <Route path="/services" element={ <ServicesPage/> } />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 };

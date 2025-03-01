@@ -25,7 +25,7 @@ const Work = () => {
             (dets, i) => (
               <button
                 key={i}
-                className="px-4 py-2 opacity-80 border rounded-3xl uppercase font-mono tracking-wider"
+                className="px-4 py-2 cursor-pointer opacity-80 border rounded-3xl uppercase font-mono tracking-wider"
               >
                 {dets}
               </button>

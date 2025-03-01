@@ -6,9 +6,9 @@ import Work from '../components/Work'
 const WorkPage = () => {
   return (
       <>
-          <Navbar />
+          {/* <Navbar /> */}
           <Work/>
-          <Footer/>
+          {/* <Footer/> */}
       </>
   )
 }
