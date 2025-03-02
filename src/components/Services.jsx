@@ -23,7 +23,7 @@ const Services = () => {
         )}
       </div>
 
-      <div className="flex flex-col gap-30 mb-20 sm:mb-30">
+      <div className="flex flex-col sm:gap-10 md:gap-30 mb-20 sm:mb-30">
         {data5.map((dets, i) => (
           <div key={i} id={dets.id} className="flex flex-col gap-8">
             <div className="overflow-hidden mt-15">
@@ -78,7 +78,7 @@ const Services = () => {
 
                 <div className="flex flex-col gap-10 lg:gap-16">
                   <div>
-                    <h1 className="text-[2.5rem] sm:text-5xl lg:text-6xl xl:text-7xl sm:font-normal max-sm:leading-10 font-light tracking-wide uppercase">
+                    <h1 className="text-[2.3rem] sm:text-5xl lg:text-6xl xl:text-7xl sm:font-normal max-sm:leading-10 font-light tracking-wide uppercase">
                       {dets.title}
                     </h1>
                   </div>
