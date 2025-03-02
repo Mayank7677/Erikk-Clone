@@ -15,7 +15,7 @@ import FormPage from "./components/FormPage";
 
 const App = () => {
 
-  // const scroll = new LocomotiveScroll();
+  const scroll = new LocomotiveScroll();
 
 
   return (
