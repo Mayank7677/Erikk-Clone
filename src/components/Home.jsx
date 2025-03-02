@@ -7,8 +7,11 @@ import { BsArrowDownRightCircleFill } from "react-icons/bs";
 import data from '../data/data';
 import data2 from '../data/data2';
 import TeamSection from './TeamSection';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+  let navigate = useNavigate()
 
 
 
@@ -168,7 +171,10 @@ const Home = () => {
                 Establish a strong brand identity that sets you apart.luxury
                 brands connect .
               </p>
-              <div className="flex gap-5 mt-4 items-center cursor-pointer">
+              <div
+                onClick={() => navigate("/services")}
+                className="flex gap-5 mt-4 items-center cursor-pointer"
+              >
                 <BsArrowDownRightCircleFill className="text-4xl hover:rotate-360 duration-600" />
                 <p className="uppercase tracking-wider text-sm font-mono">
                   About Branding
@@ -182,7 +188,10 @@ const Home = () => {
                 Utilize data and analytics to optimize your marketing
                 performance.
               </p>
-              <div className="flex gap-5 mt-4 items-center cursor-pointer">
+              <div
+                onClick={() => navigate("/services")}
+                className="flex gap-5 mt-4 items-center cursor-pointer"
+              >
                 <BsArrowDownRightCircleFill className="text-4xl hover:rotate-360 duration-600" />
                 <p className="uppercase tracking-wider text-sm font-mono">
                   About Campaigns
@@ -196,7 +205,10 @@ const Home = () => {
                 Develop customized online stores that reflect your brand and
                 vision.
               </p>
-              <div className="flex gap-5 mt-4 items-center cursor-pointer">
+              <div
+                onClick={() => navigate("/services")}
+                className="flex gap-5 mt-4 items-center cursor-pointer"
+              >
                 <BsArrowDownRightCircleFill className="text-4xl hover:rotate-360 duration-600" />
                 <p className="uppercase tracking-wider text-sm font-mono">
                   About E-commerce
@@ -210,7 +222,10 @@ const Home = () => {
                 Create engaging and shareable content that drives brand
                 awareness.
               </p>
-              <div className="flex gap-5 mt-4 items-center cursor-pointer">
+              <div
+                onClick={() => navigate("/services")}
+                className="flex gap-5 mt-4 items-center cursor-pointer"
+              >
                 <BsArrowDownRightCircleFill className="text-4xl hover:rotate-360 duration-600" />
                 <p className="uppercase tracking-wider text-sm font-mono">
                   About social media
@@ -269,7 +284,7 @@ const Home = () => {
               <div className="flex gap-4 mt-4 items-center sm:pb-5 sm:mt-auto cursor-pointer">
                 <BsArrowDownRightCircleFill className="text-4xl hover:rotate-360 duration-600" />
                 <p className="uppercase tracking-wider text-sm font-mono">
-                  About Branding
+                  discover
                 </p>
               </div>
             </div>
@@ -348,7 +363,7 @@ const Home = () => {
 
       <hr className="mt-10 lg:mt-30 text-gray-400 overflow-hidden bg-white z-10" />
 
-      <TeamSection/>
+      <TeamSection />
     </main>
   );
 }

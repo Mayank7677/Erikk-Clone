@@ -7,10 +7,6 @@ const Navbar = () => {
   let navigate = useNavigate();
   const [click, setClick] = useState("");
 
-  let navigatePages = () => {
-    if (click === "work") navigate("/work");
-    else if (click === "news") navigate("/news");
-  };
 
   useEffect(() => {
     if (click) {
@@ -52,53 +48,6 @@ const Navbar = () => {
               </li>
             );
           })}
-
-          {/* <motion.li
-            // initial={{ x: 0, y: 0 }}
-            // whileHover={{
-            //   scale: 1.1,
-            // }}
-            className="font-mono cursor-pointer"
-          >
-            WORK
-          </motion.li> */}
-
-          {/* <motion.li
-            initial={{ x: 0, y: 0 }}
-            whileHover={{
-              scale: 1.1,
-            }}
-            className="font-mono cursor-pointer"
-          >
-            SERVICES
-          </motion.li>
-          <motion.li
-            initial={{ x: 0, y: 0 }}
-            whileHover={{
-              scale: 1.1,
-            }}
-            className="font-mono cursor-pointer"
-          >
-            ABOUT
-          </motion.li>
-          <motion.li
-            initial={{ x: 0, y: 0 }}
-            whileHover={{
-              scale: 1.1,
-            }}
-            className="font-mono cursor-pointer"
-          >
-            NEWS
-          </motion.li>
-          <motion.li
-            initial={{ x: 0, y: 0 }}
-            whileHover={{
-              scale: 1.1,
-            }}
-            className="font-mono cursor-pointer"
-          >
-            PAGES
-          </motion.li> */}
         </ul>
 
         <motion.button
@@ -108,7 +57,7 @@ const Navbar = () => {
           }}
           className="bg-black font-mono cursor-pointer overflow-hidden  px-5 py-2 rounded-2xl max-sm:hidden"
         >
-          <motion.span className="text-white">LET'S CREATE</motion.span>
+          <motion.span onClick={() => navigate('/form')} className="text-white">LET'S CREATE</motion.span>
         </motion.button>
 
         <RiMenu4Fill className="text-2xl sm:hidden" />

@@ -1,10 +1,14 @@
 import { motion, useInView } from 'motion/react';
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { CiTwitter } from 'react-icons/ci';
 import { FaBehance, FaInstagram } from 'react-icons/fa';
 import { MdArrowOutward } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+
+  let navigate = useNavigate()
+  
 
     const ref6 = useRef(null);
   const isInView6 = useInView(ref6, { triggerOnce: true, threshold: 0.5 });
@@ -27,7 +31,7 @@ const Footer = () => {
         <p className="uppercase text-4xl font-light md:text-6xl lg:text-7xl">
           Unleashing the Potential of Your Brand
         </p>
-        <button className="bg-white text-black w-fit flex items-center gap-3 font-mono cursor-pointer overflow-hidden  px-5 py-2 rounded-2xl">
+        <button onClick={() => navigate('/form')} className="bg-white text-black w-fit flex items-center gap-3 font-mono cursor-pointer overflow-hidden  px-5 py-2 rounded-2xl">
           <p className="uppercase">get in touch</p>
           <MdArrowOutward />
         </button>
@@ -73,7 +77,17 @@ const Footer = () => {
           <ul className="flex flex-col gap-3  ">
             {["home", "services", "about", "jobs", "contact"].map((ele, i) => {
               return (
-                <li key={i} className="relative group max-w-fit">
+                <li
+                  key={i}
+                  onClick={() =>
+                    ele === "home"
+                      ? navigate("/")
+                      : ele === "contact"
+                      ? navigate("/form")
+                      : navigate(`/${ele}`)
+                  }
+                  className="relative group max-w-fit"
+                >
                   <p className="uppercase font-mono cursor-pointer">{ele}</p>
                   <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
                 </li>
@@ -100,7 +114,13 @@ const Footer = () => {
               "shop songle",
             ].map((ele, i) => {
               return (
-                <li key={i} className="relative group max-w-fit">
+                <li
+                  onClick={() =>
+                    ele === "home" ? navigate("/") : navigate(`/${ele}`)
+                  }
+                  key={i}
+                  className="relative group max-w-fit"
+                >
                   <p className="uppercase font-mono cursor-pointer">{ele}</p>
                   <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
                 </li>
@@ -121,7 +141,13 @@ const Footer = () => {
               "changelog",
             ].map((ele, i) => {
               return (
-                <li key={i} className="relative group max-w-fit">
+                <li
+                  onClick={() =>
+                    ele === "home" ? navigate("/") : navigate(`/${ele}`)
+                  }
+                  key={i}
+                  className="relative group max-w-fit"
+                >
                   <p className="uppercase font-mono cursor-pointer">{ele}</p>
                   <span className="absolute w-0 bg-white h-[2px] transition-all duration-200 group-hover:w-full"></span>
                 </li>
